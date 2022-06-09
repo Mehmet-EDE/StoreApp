@@ -10,5 +10,9 @@ export const styles=StyleSheet.create({
   justifyContent:'center',
   alignItems:'center',
   alignSelf:'center',
+  flexDirection:'row'
+ },
+ Input:{
+     flex:1
  }
 })
