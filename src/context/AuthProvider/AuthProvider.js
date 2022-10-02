@@ -1,21 +1,21 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import reducers from './reducers'
 
-
-
-export default function authProvider({children})  {
+const AutProvider = ({ children }) => {
     const [user, setUser] = useState(null)
-    const [authLoading, setAuthloading] = useState(true)
+    const [isAuthLoading, setAuthLoading] = useState(true)
     useEffect(() => {
-        AsyncStorage.getItem('@user').then((userSession) => {
-            console.log(userSession)
-            userSession && setUser(JSON.parse(userSession))
-            setAuthloading(false)
+        AsyncStorage.getItem('@user').then(res => {
+            res ?
+                setUser(JSON.parse(res)) :
+                setUser(null);
+            setAuthLoading(false)
         })
     }, [])
-    const store = createStore(reducers, { user, authLoading })
+    const store = createStore(reducers, { user, isAuthLoading })
     return <Provider store={store}>{children}</Provider>
 }
+export default AutProvider

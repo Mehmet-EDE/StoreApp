@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "714805964339",
+    "project_id": "storeapp-308ce",
+    "storage_bucket": "storeapp-308ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:714805964339:android:d9ab1c8a3b44c5dcc13d46",
+        "android_client_info": {
+          "package_name": "com.tikanapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "714805964339-3hrdf0rr5ee08vjk2eob4q4kdor25h74.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRaZxUF9sjaSwnHgKdqWNyYCDyD-o0K2w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "714805964339-3hrdf0rr5ee08vjk2eob4q4kdor25h74.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

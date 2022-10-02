@@ -14,6 +14,11 @@ const usePost = () => {
         } catch (error) {
             setError(error)
             setLoading(false)
+        }finally{
+            setLoading(false)
+            if(error){
+                setError(Error)
+            }
         }
     };
     return { data, loading, error, post }

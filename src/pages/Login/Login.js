@@ -7,10 +7,12 @@ import Button from '../../components/Button'
 import usePost from '../../hooks/usePost'
 import Config from 'react-native-config'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import { useDispatch } from 'react-redux'
 
 
 const Login = ({ navigation }) => {
     const { data, loading, error, post } = usePost()
+    const dispatch = useDispatch()
     const handleLogin = (values) => {
         AsyncStorage.setItem('@user', JSON.stringify(values))
     }
@@ -21,14 +23,19 @@ const Login = ({ navigation }) => {
         username: 'donero',
         password: 'ewedon'
     }
-    // AsyncStorage.setItem('@user', JSON.stringify(user))
-    AsyncStorage.getItem('@user').then(us => {
-        console.log(us)
-    })
+    const handleSubmit=(values)=>{
+        AsyncStorage.setItem('@user', JSON.stringify(values))
+    }
+    // AsyncStorage.getItem('@user').then(us => {
+    //     console.log(us)
+    // })
     if (data) {
-        if (data.status !== 'Error') navigation.navigate('Products')
-        else alert('Kullanıcı bulunamadı')
-        console.log(data)
+        if (data.status !== 'Error') {
+            dispatch({ type: 'SET_USER', payload: { user } })
+            AsyncStorage.setItem('@user', JSON.stringify(user))
+            navigation.navigate('Products')
+        } else alert('Kullanıcı bulunamadı')
+        console.log('data', data)
     }
     // donero
     // ewedon

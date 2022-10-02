@@ -7,9 +7,5 @@
     <integer name="react_native_dev_server_port">8081</integer>
     <!-- Value from build type: debug -->
     <integer name="react_native_inspector_proxy_port">8081</integer>
-    <!-- Value from default config. -->
-    <string name="API_URL" translatable="false">"https://fakestoreapi.com/products"</string>
-    <!-- Value from default config. -->
-    <string name="LOGIN_URL" translatable="false">"https://fakestoreapi.com/auth"</string>
 
 </resources>

@@ -8,14 +8,15 @@ import Error from '../../components/Error/Error'
 const Detail = ({ route }) => {
   const { id } = route.params
 
-    const { error, loading, data } = useFetch({ url: `${Config.API_URL}/${id}` })
+  const { error, loading, data } = useFetch({ url: `${Config.API_URL}/${id}` })
   console.log(data)
   if (error) {
     return (
       <Error />
     )
   }
-  if (loading) {
+  if (!loading) {
+    console.log('1', loading)
     return <Loading />
   }
   return (

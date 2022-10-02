@@ -1,12 +1,11 @@
 import React from 'react'
-import { Router } from './Router'
-import AuthProvider from '../src/context/AuthProvider'
+import Router from './Router'
+import AuthProvider from './context/AuthProvider'
 
-export  function Wrapper() {
+export default () => {
     return (
         <AuthProvider>
             <Router />
         </AuthProvider>
-    );
-};
-
+    )
+}
